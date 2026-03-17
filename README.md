@@ -13,7 +13,7 @@ Built with Python and Tkinter
 | Rithweek | Game logic (`src/game_state.py`) |
 | Nizzah | Minimax algorithm (`src/minimax.py`) |
 | Matthew | Alpha-Beta algorithm (`src/alphabeta.py`) |
-| Ilham | User interface (`src/ui.py`) |
+| Ilham | Tests (`tests/`) |
 | Teammate 5 | Experiments & stats (`src/experiments.py`) |
 
 ---
@@ -41,48 +41,95 @@ Every move reduces the string length by exactly 1. The game ends when one number
 
 ```
 number-string-game/
-├── main.py                  # entry point
-├── src/
-│   ├── game_state.py        # GameState class, move generation, win detection
-│   ├── minimax.py           # Minimax algorithm and heuristic evaluation
-│   ├── alphabeta.py         # Alpha-Beta pruning algorithm
-│   ├── ui.py                # Tkinter graphical interface
-│   └── experiments.py       # stats tracking and CSV export
-├── tests/
-│   ├── test_game_state.py   # tests for game logic
-│   └── test_algorithms.py   # tests for Minimax and Alpha-Beta
+├── LICENSE
+├── README.md
 ├── requirements.txt
-└── README.md
+├── main.py                  # entry point
+├── src
+│   ├── alphabeta.py         # Alpha-Beta pruning algorithm
+│   ├── experiments.py       # stats tracking and CSV export
+│   ├── game_state.py        # GameState class, move generation, win detection
+│   ├── minimax.py           # Minimax algorithm and heuristic evaluation
+│   └── ui.py                # Tkinter graphical interface
+├── team-brief-1.md
+├── tests
+│   ├── test_algorithms.py   # tests for game logic
+│   └── test_game_state.py   # tests for Minimax and Alpha-Beta
+└── venv
+
 ```
 
 ---
 
 ## How to run
-
+ 
 **Requirements:** Python 3.10 or higher. Tkinter is included with standard Python installations.
-
+ 
 Clone the repository and set up the environment:
-
+ 
 ```bash
-git clone https://github.com/mgharris97/number-string-game/tree/main
+git clone https://github.com/YOUR_USERNAME/number-string-game.git
 cd number-string-game
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-
+ 
 Run the game:
-
+ 
 ```bash
 python main.py
 ```
-
+ 
 Run the tests:
-
+ 
 ```bash
 python -m pytest tests/ -v
 ```
+ 
+---
+ 
+## Git workflow
+ 
+Each team member works on their own branch and then just merges to the main branch to avoid having to do pull requests
+ 
+**Branches:**
+ 
+| Name | Role |
+|------|------|
+| Rithweek | Game logic (`src/game_state.py`) |
+| Nizzah | Minimax algorithm (`src/minimax.py`) |
+| Matthew | Alpha-Beta algorithm (`src/alphabeta.py`) |
+| Ilham | Tests (`tests/`) |
+| Teammate 5 | Experiments & stats (`src/experiments.py`) |
+ 
+**Setup — do this once after cloning:**
+ 
+```bash
+git checkout -b your-branch-name
+```
+For example, I'd run ```git checkout -b alphabeta```
+ 
+**Daily workflow:**
+ 
+```bash
+git add .
+git commit -m "describe what you did"
+git push -u origin your-branch-name
+```
+ 
+**Staying up to date** — whenever youc come to work on the project, pull changes from `main`
+ 
+```bash
+git checkout main
+git pull
+git checkout your-branch-name
+git merge main
+```
 
+**When your work is ready** — let the team know and one of us will merge your branch into `main` on GitHub.
+ 
+> Never push directly to `main` — always push to your own branch since two pushes at the same time will create conflicts
 ---
 
 ## Algorithms
