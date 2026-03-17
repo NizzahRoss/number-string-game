@@ -1,4 +1,4 @@
-# Number String Game — Team Briefs
+# Number String Game — Team Brief 1
 
 ---
 
@@ -10,7 +10,7 @@
 **File:** `src/game_state.py`
 **Priority:** Push stub first — everyone else is blocked until this exists.
 
-#### Step 1 — Push this stub immediately
+#### Step 1 — Push this stub asap
 ```python
 class GameState:
     def __init__(self, nums, points=0, bank=0, turn='first'):
